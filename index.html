@@ -2,206 +2,204 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edu Center Premium</title>
+<title>Premium Edu Center</title>
 
 <style>
-* { box-sizing: border-box; }
-
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f4f6fa;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
 }
 
-/* ===== Sidebar ===== */
-.sidebar {
-    position: fixed;
-    left: -250px;
-    width: 250px;
-    height: 100%;
-    background: linear-gradient(180deg, #0d6efd, #002b6b);
-    color: white;
-    padding-top: 40px;
-    transition: 0.3s;
-    z-index: 1000;
+body{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:#333;
 }
 
-.sidebar h2 {
-    text-align: center;
-    margin-bottom: 30px;
+/* ===== NAV ===== */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
 }
 
-.sidebar a {
-    display: block;
-    padding: 15px 25px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
+nav h2{
+    color:white;
 }
 
-.sidebar a:hover {
-    background: rgba(255,255,255,0.2);
-    padding-left: 35px;
+nav a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+    font-weight:500;
 }
 
-.sidebar.active {
-    left: 0;
+/* ===== HERO ===== */
+.hero{
+    text-align:center;
+    padding:100px 20px;
+    color:white;
 }
 
-/* ===== Top Bar ===== */
-.topbar {
-    background: white;
-    padding: 15px 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+.hero h1{
+    font-size:42px;
+    margin-bottom:20px;
 }
 
-.menu-btn {
-    font-size: 24px;
-    cursor: pointer;
+.hero p{
+    font-size:18px;
+    margin-bottom:30px;
 }
 
-/* ===== Content ===== */
-.content {
-    padding: 40px 20px;
+.btn{
+    padding:14px 28px;
+    background:white;
+    color:#764ba2;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
 }
 
-.hero {
-    background: linear-gradient(120deg, #0d6efd, #00c6ff);
-    color: white;
-    padding: 60px 30px;
-    border-radius: 20px;
-    text-align: center;
-    margin-bottom: 40px;
+.btn:hover{
+    transform:scale(1.1);
 }
 
-.hero h1 {
-    margin: 0;
-    font-size: 28px;
+/* ===== SECTION ===== */
+.section{
+    background:white;
+    padding:70px 20px;
+    border-radius:40px 40px 0 0;
+    margin-top:60px;
 }
 
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: white;
-    color: #0d6efd;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+.section h2{
+    text-align:center;
+    margin-bottom:40px;
 }
 
-.button:hover {
-    background: #e0e7ff;
+/* ===== CARDS ===== */
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
 }
 
-/* Cards */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+.card{
+    background:#f4f6fa;
+    padding:30px;
+    border-radius:20px;
+    width:260px;
+    text-align:center;
+    transition:0.3s;
 }
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    flex: 1 1 250px;
-    transition: 0.3s;
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.1);
 }
 
-.card:hover {
-    transform: translateY(-8px);
+/* ===== FORM ===== */
+.form-box{
+    max-width:400px;
+    margin:40px auto 0;
 }
 
-/* Form */
-form {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    max-width: 400px;
+input,button{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    font-size:16px;
 }
 
-input, button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+button{
+    background:#764ba2;
+    color:white;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-button {
-    background: #0d6efd;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
+button:hover{
+    background:#5b3c91;
 }
 
-button:hover {
-    background: #002b6b;
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    padding:30px;
+    color:white;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .hero h1{
+        font-size:28px;
+    }
+    nav{
+        flex-direction:column;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="sidebar" id="sidebar">
+<nav>
     <h2>Edu Center</h2>
-    <a href="#">Главная</a>
-    <a href="#">Курсы</a>
-    <a href="#">О нас</a>
-    <a href="#">Контакты</a>
-</div>
-
-<div class="topbar">
-    <span class="menu-btn" onclick="toggleMenu()">☰</span>
-</div>
-
-<div class="content">
-
-    <div class="hero">
-        <h1>Премиальный образовательный центр</h1>
-        <p>Развитие мышления и навыков будущего</p>
-        <a href="#courses" class="button">Смотреть курсы</a>
+    <div>
+        <a href="#courses">Курсы</a>
+        <a href="#about">О нас</a>
+        <a href="#contact">Контакты</a>
     </div>
+</nav>
 
-    <h2 id="courses">Популярные курсы</h2>
+<div class="hero">
+    <h1>Образование нового поколения</h1>
+    <p>Логика • Математика • Робототехника • Английский</p>
+    <a href="#courses" class="btn">Начать обучение</a>
+</div>
 
-    <div class="card-container">
+<div class="section" id="courses">
+    <h2>Наши курсы</h2>
+
+    <div class="cards">
         <div class="card">
             <h3>Математика</h3>
-            <p>Развитие логики и аналитики.</p>
+            <p>Развитие логического мышления.</p>
         </div>
 
         <div class="card">
             <h3>Робототехника</h3>
-            <p>Инженерное мышление и практика.</p>
+            <p>Практическое инженерное обучение.</p>
         </div>
 
         <div class="card">
             <h3>Английский</h3>
-            <p>Современные методы обучения.</p>
+            <p>Современная разговорная методика.</p>
         </div>
     </div>
 
-    <h2 style="margin-top:50px;">Онлайн запись</h2>
-
-    <form>
+    <div class="form-box" id="contact">
+        <h2 style="margin-top:50px;">Записаться на курс</h2>
         <input type="text" placeholder="Ваше имя">
         <input type="tel" placeholder="Телефон">
-        <button type="submit">Записаться</button>
-    </form>
-
+        <button>Отправить заявку</button>
+    </div>
 </div>
 
-<script>
-function toggleMenu() {
-    document.getElementById("sidebar").classList.toggle("active");
-}
-</script>
+<footer>
+    © 2026 Edu Center | Ташкент
+</footer>
 
 </body>
 </html>
