@@ -1,6 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Образовательный центр</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #0d6efd;
+    color: white;
+    padding-top: 20px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #084298;
+}
+
+/* Content */
+.content {
+    margin-left: 250px;
+    padding: 40px;
+}
+
+.section {
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: #0d6efd;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Edu Center</h2>
+    <a href="#home">Главная</a>
+    <a href="#courses">Курсы</a>
+    <a href="#teachers">Преподаватели</a>
+    <a href="#schedule">Расписание</a>
+    <a href="#contact">Контакты</a>
+</div>
+
+<div class="content">
+
+    <div class="section" id="home">
+        <h1>Добро пожаловать!</h1>
+        <p>Современный образовательный центр для детей.</p>
+    </div>
+
+    <div class="section" id="courses">
+        <h1>Наши курсы</h1>
+        <p>Математика, Логика, Робототехника, Английский язык.</p>
+    </div>
+
+    <div class="section" id="teachers">
+        <h1>Преподаватели</h1>
+        <p>Опытные специалисты с педагогическим образованием.</p>
+    </div>
+
+    <div class="section" id="schedule">
+        <h1>Расписание</h1>
+        <p>Занятия проходят с понедельника по субботу.</p>
+    </div>
+
+    <div class="section" id="contact">
+        <h1>Контакты</h1>
+        <p>Телефон: +998 XX XXX XX XX</p>
+    </div>
+
+</div>
+
+</body>
+</html>
+<html>
+<head>
     <title>Сайт Муслима</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
