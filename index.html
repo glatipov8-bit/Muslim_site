@@ -2,203 +2,174 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Edu Center</title>
+<title>Elite Edu Center</title>
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#667eea,#764ba2);
-    color:#333;
+background:#0f172a;
+color:white;
 }
 
-/* ===== NAV ===== */
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 40px;
-    background:rgba(255,255,255,0.1);
-    backdrop-filter:blur(10px);
-    position:sticky;
-    top:0;
-}
-
-nav h2{
-    color:white;
-}
-
-nav a{
-    color:white;
-    margin-left:20px;
-    text-decoration:none;
-    font-weight:500;
-}
-
-/* ===== HERO ===== */
+/* HERO */
 .hero{
-    text-align:center;
-    padding:100px 20px;
-    color:white;
+height:100vh;
+background:linear-gradient(rgba(15,23,42,0.8),rgba(15,23,42,0.8)),
+url('https://images.unsplash.com/photo-1509062522246-3755977927d7');
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
 .hero h1{
-    font-size:42px;
-    margin-bottom:20px;
+font-size:48px;
+margin-bottom:20px;
 }
 
 .hero p{
-    font-size:18px;
-    margin-bottom:30px;
+font-size:20px;
+margin-bottom:30px;
+color:#cbd5e1;
 }
 
 .btn{
-    padding:14px 28px;
-    background:white;
-    color:#764ba2;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
+padding:15px 35px;
+background:linear-gradient(90deg,#3b82f6,#9333ea);
+border:none;
+border-radius:50px;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 0 20px rgba(147,51,234,0.5);
 }
 
 .btn:hover{
-    transform:scale(1.1);
+transform:scale(1.1);
+box-shadow:0 0 40px rgba(147,51,234,0.8);
 }
 
-/* ===== SECTION ===== */
+/* SECTION */
 .section{
-    background:white;
-    padding:70px 20px;
-    border-radius:40px 40px 0 0;
-    margin-top:60px;
+padding:80px 20px;
+text-align:center;
 }
 
-.section h2{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-/* ===== CARDS ===== */
 .cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:25px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+margin-top:40px;
 }
 
 .card{
-    background:#f4f6fa;
-    padding:30px;
-    border-radius:20px;
-    width:260px;
-    text-align:center;
-    transition:0.3s;
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+width:280px;
+transition:0.3s;
+border:1px solid #334155;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(0,0,0,0.1);
+transform:translateY(-10px);
+border-color:#3b82f6;
+box-shadow:0 0 30px rgba(59,130,246,0.3);
 }
 
-/* ===== FORM ===== */
+.card h3{
+margin-bottom:15px;
+color:#3b82f6;
+}
+
+/* FORM */
 .form-box{
-    max-width:400px;
-    margin:40px auto 0;
+max-width:400px;
+margin:40px auto;
 }
 
-input,button{
-    width:100%;
-    padding:14px;
-    margin-top:15px;
-    border-radius:12px;
-    border:1px solid #ddd;
-    font-size:16px;
+input{
+width:100%;
+padding:14px;
+margin-top:15px;
+border-radius:10px;
+border:none;
+background:#1e293b;
+color:white;
 }
 
 button{
-    background:#764ba2;
-    color:white;
-    border:none;
-    cursor:pointer;
-    transition:0.3s;
+width:100%;
+margin-top:20px;
 }
 
-button:hover{
-    background:#5b3c91;
-}
-
-/* ===== FOOTER ===== */
 footer{
-    text-align:center;
-    padding:30px;
-    color:white;
+text-align:center;
+padding:30px;
+background:#020617;
+color:#94a3b8;
 }
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media(max-width:768px){
-    .hero h1{
-        font-size:28px;
-    }
-    nav{
-        flex-direction:column;
-    }
+.hero h1{
+font-size:32px;
+}
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-    <h2>Edu Center</h2>
-    <div>
-        <a href="#courses">Курсы</a>
-        <a href="#about">О нас</a>
-        <a href="#contact">Контакты</a>
-    </div>
-</nav>
-
 <div class="hero">
-    <h1>Образование нового поколения</h1>
-    <p>Логика • Математика • Робототехника • Английский</p>
-    <a href="#courses" class="btn">Начать обучение</a>
+<h1>Образование нового уровня</h1>
+<p>Логика • IT • Робототехника • Английский</p>
+<button class="btn">Начать обучение</button>
 </div>
 
-<div class="section" id="courses">
-    <h2>Наши курсы</h2>
+<div class="section">
+<h2>Популярные направления</h2>
 
-    <div class="cards">
-        <div class="card">
-            <h3>Математика</h3>
-            <p>Развитие логического мышления.</p>
-        </div>
+<div class="cards">
+<div class="card">
+<h3>Математика</h3>
+<p>Глубокое понимание и логика.</p>
+</div>
 
-        <div class="card">
-            <h3>Робототехника</h3>
-            <p>Практическое инженерное обучение.</p>
-        </div>
+<div class="card">
+<h3>Робототехника</h3>
+<p>Инженерное мышление и практика.</p>
+</div>
 
-        <div class="card">
-            <h3>Английский</h3>
-            <p>Современная разговорная методика.</p>
-        </div>
-    </div>
+<div class="card">
+<h3>Английский</h3>
+<p>Разговорный и академический уровень.</p>
+</div>
+</div>
 
-    <div class="form-box" id="contact">
-        <h2 style="margin-top:50px;">Записаться на курс</h2>
-        <input type="text" placeholder="Ваше имя">
-        <input type="tel" placeholder="Телефон">
-        <button>Отправить заявку</button>
-    </div>
+<div class="form-box">
+<h2 style="margin-top:60px;">Записаться</h2>
+<input type="text" placeholder="Ваше имя">
+<input type="tel" placeholder="Телефон">
+<button class="btn">Отправить заявку</button>
+</div>
+
 </div>
 
 <footer>
-    © 2026 Edu Center | Ташкент
+© 2026 Elite Edu Center | Ташкент
 </footer>
 
 </body>
