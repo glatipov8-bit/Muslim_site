@@ -2,96 +2,206 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Образовательный центр</title>
+<title>Edu Center Premium</title>
 
 <style>
+* { box-sizing: border-box; }
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6fa;
 }
 
-/* Sidebar */
+/* ===== Sidebar ===== */
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background: #0d6efd;
-    color: white;
-    padding-top: 20px;
     position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(180deg, #0d6efd, #002b6b);
+    color: white;
+    padding-top: 40px;
+    transition: 0.3s;
+    z-index: 1000;
 }
 
 .sidebar h2 {
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .sidebar a {
     display: block;
+    padding: 15px 25px;
     color: white;
-    padding: 15px;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .sidebar a:hover {
-    background: #084298;
+    background: rgba(255,255,255,0.2);
+    padding-left: 35px;
 }
 
-/* Content */
+.sidebar.active {
+    left: 0;
+}
+
+/* ===== Top Bar ===== */
+.topbar {
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.menu-btn {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ===== Content ===== */
 .content {
-    margin-left: 250px;
-    padding: 40px;
+    padding: 40px 20px;
 }
 
-.section {
-    margin-bottom: 50px;
+.hero {
+    background: linear-gradient(120deg, #0d6efd, #00c6ff);
+    color: white;
+    padding: 60px 30px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-h1 {
+.hero h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: white;
     color: #0d6efd;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #e0e7ff;
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    flex: 1 1 250px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* Form */
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    max-width: 400px;
+}
+
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #002b6b;
 }
 </style>
 </head>
 
 <body>
 
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
     <h2>Edu Center</h2>
-    <a href="#home">Главная</a>
-    <a href="#courses">Курсы</a>
-    <a href="#teachers">Преподаватели</a>
-    <a href="#schedule">Расписание</a>
-    <a href="#contact">Контакты</a>
+    <a href="#">Главная</a>
+    <a href="#">Курсы</a>
+    <a href="#">О нас</a>
+    <a href="#">Контакты</a>
+</div>
+
+<div class="topbar">
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
 </div>
 
 <div class="content">
 
-    <div class="section" id="home">
-        <h1>Добро пожаловать!</h1>
-        <p>Современный образовательный центр для детей.</p>
+    <div class="hero">
+        <h1>Премиальный образовательный центр</h1>
+        <p>Развитие мышления и навыков будущего</p>
+        <a href="#courses" class="button">Смотреть курсы</a>
     </div>
 
-    <div class="section" id="courses">
-        <h1>Наши курсы</h1>
-        <p>Математика, Логика, Робототехника, Английский язык.</p>
+    <h2 id="courses">Популярные курсы</h2>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>Математика</h3>
+            <p>Развитие логики и аналитики.</p>
+        </div>
+
+        <div class="card">
+            <h3>Робототехника</h3>
+            <p>Инженерное мышление и практика.</p>
+        </div>
+
+        <div class="card">
+            <h3>Английский</h3>
+            <p>Современные методы обучения.</p>
+        </div>
     </div>
 
-    <div class="section" id="teachers">
-        <h1>Преподаватели</h1>
-        <p>Опытные специалисты с педагогическим образованием.</p>
-    </div>
+    <h2 style="margin-top:50px;">Онлайн запись</h2>
 
-    <div class="section" id="schedule">
-        <h1>Расписание</h1>
-        <p>Занятия проходят с понедельника по субботу.</p>
-    </div>
-
-    <div class="section" id="contact">
-        <h1>Контакты</h1>
-        <p>Телефон: +998 XX XXX XX XX</p>
-    </div>
+    <form>
+        <input type="text" placeholder="Ваше имя">
+        <input type="tel" placeholder="Телефон">
+        <button type="submit">Записаться</button>
+    </form>
 
 </div>
+
+<script>
+function toggleMenu() {
+    document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
