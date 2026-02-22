@@ -1,242 +1,243 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Edu Center</title>
+<title>RoboChess — Робототехника, шахматы и логика в Ургенче</title>
+
+<meta name="description" content="RoboChess — центр робототехники, шахмат и логики в Ургенче для детей 7–15 лет. 2 филиала. Запишитесь на пробное занятие.">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#f4f6fa;color:#222;line-height:1.6;}
 
-body{
-background:#0f172a;
+header{
+background:linear-gradient(135deg,#0d6efd,#6610f2);
 color:white;
-}
-
-/* HERO */
-.hero{
-height:100vh;
-background:linear-gradient(rgba(15,23,42,0.85),rgba(15,23,42,0.85)),
-url('https://images.unsplash.com/photo-1509062522246-3755977927d7');
-background-size:cover;
-background-position:center;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:46px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-color:#cbd5e1;
-margin-bottom:30px;
-}
-
-.btn{
-padding:15px 35px;
-background:linear-gradient(90deg,#3b82f6,#9333ea);
-border:none;
-border-radius:50px;
-color:white;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
-box-shadow:0 0 20px rgba(147,51,234,0.5);
-}
-
-.btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 40px rgba(147,51,234,0.8);
-}
-
-/* SECTION */
-.section{
 padding:80px 20px;
 text-align:center;
 }
 
+header h1{font-size:40px;margin-bottom:20px;}
+header p{font-size:18px;margin-bottom:30px;}
+
+.btn{
+display:inline-block;
+padding:12px 25px;
+background:white;
+color:#0d6efd;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{padding:70px 20px;max-width:1100px;margin:auto;}
+h2{text-align:center;margin-bottom:40px;}
+
+.course{
+background:white;
+margin-bottom:40px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+overflow:hidden;
+}
+
+.course img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.course-content{
+padding:25px;
+}
+
+ul{margin:10px 0 0 20px;}
+
 .cards{
 display:flex;
 flex-wrap:wrap;
+gap:20px;
 justify-content:center;
-gap:30px;
-margin-top:40px;
 }
 
 .card{
-background:#1e293b;
-padding:30px;
-border-radius:20px;
-width:280px;
-transition:0.3s;
-border:1px solid #334155;
-cursor:pointer;
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.07);
+width:250px;
+text-align:center;
 }
 
-.card:hover{
-transform:translateY(-10px);
-border-color:#3b82f6;
-box-shadow:0 0 30px rgba(59,130,246,0.3);
-}
-
-.card h3{
-margin-bottom:15px;
-color:#3b82f6;
-}
-
-/* FORM */
-.form-box{
-max-width:400px;
-margin:40px auto;
-}
-
-input{
+.teacher img{
 width:100%;
-padding:14px;
-margin-top:15px;
+height:200px;
+object-fit:cover;
 border-radius:10px;
-border:none;
-background:#1e293b;
-color:white;
+margin-bottom:15px;
+}
+
+.price{
+background:#eef2ff;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+.review{
+background:white;
+padding:20px;
+border-radius:12px;
+margin-bottom:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.07);
 }
 
 footer{
-text-align:center;
+background:#111;
+color:#ccc;
 padding:30px;
-background:#020617;
-color:#94a3b8;
+text-align:center;
+font-size:14px;
+margin-top:40px;
 }
 
-/* MODAL */
-#modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
+input{
+padding:10px;
+width:250px;
+margin-bottom:10px;
+}
+
+iframe{
 width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-justify-content:center;
-align-items:center;
-}
-
-.modal-content{
-background:#1e293b;
-padding:30px;
-border-radius:20px;
-max-width:400px;
-text-align:center;
-}
-
-.close-btn{
+height:300px;
+border:0;
+border-radius:12px;
 margin-top:20px;
 }
 
-/* RESPONSIVE */
 @media(max-width:768px){
-.hero h1{
-font-size:30px;
-}
+header h1{font-size:28px;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-<h1>Elite Edu Center</h1>
-<p>Логика • Математика • Робототехника • Английский</p>
-<button class="btn" onclick="scrollToCourses()">Выбрать курс</button>
-</div>
+<header>
+<h1>RoboChess</h1>
+<p>Робототехника • Шахматы • Логика для детей 7–15 лет в Ургенче</p>
+<a href="#contact" class="btn">Записаться на пробное занятие</a>
+</header>
 
-<div class="section" id="courses">
+<section>
 <h2>Наши направления</h2>
 
+<div class="course">
+<img src="https://images.unsplash.com/photo-1581091870627-3b5de9b1e0a0">
+<div class="course-content">
+<h3>🤖 Робототехника</h3>
+<p>Дети создают и программируют роботов, изучают основы электроники и инженерного мышления.</p>
+<ul>
+<li>Практические проекты</li>
+<li>Командная работа</li>
+<li>Подготовка к соревнованиям</li>
+</ul>
+<p><strong>Возраст:</strong> 8–15 лет</p>
+</div>
+</div>
+
+<div class="course">
+<img src="https://images.unsplash.com/photo-1603732551688-6f7c5b0e0a9a">
+<div class="course-content">
+<h3>♟ Шахматы</h3>
+<p>Развитие стратегического мышления и концентрации. Турниры и подготовка к соревнованиям.</p>
+<ul>
+<li>Тактика и стратегия</li>
+<li>Анализ партий</li>
+<li>Турниры</li>
+</ul>
+<p><strong>Возраст:</strong> 7–14 лет</p>
+</div>
+</div>
+
+<div class="course">
+<img src="https://images.unsplash.com/photo-1584697964403-cd2b1d6b7a3e">
+<div class="course-content">
+<h3>🧠 Логика</h3>
+<p>Олимпиадная подготовка и развитие аналитического мышления.</p>
+<ul>
+<li>Нестандартные задачи</li>
+<li>Математическая логика</li>
+<li>Развитие памяти</li>
+</ul>
+<p><strong>Возраст:</strong> 7–15 лет</p>
+</div>
+</div>
+
+</section>
+
+<section>
+<h2>Наши преподаватели</h2>
 <div class="cards">
 
-<div class="card" onclick="openModal('math')">
-<h3>Математика</h3>
-<p>Развитие логического мышления.</p>
+<div class="card teacher">
+<img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
+<h3>Алишер Каримов</h3>
+<p>Преподаватель робототехники, опыт 6 лет.</p>
 </div>
 
-<div class="card" onclick="openModal('robot')">
-<h3>Робототехника</h3>
-<p>Инженерное обучение и практика.</p>
-</div>
-
-<div class="card" onclick="openModal('english')">
-<h3>Английский язык</h3>
-<p>Современная разговорная методика.</p>
+<div class="card teacher">
+<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2">
+<h3>Дильноза Рахимова</h3>
+<p>Тренер по шахматам, призёр турниров.</p>
 </div>
 
 </div>
+</section>
 
-<div class="form-box">
-<h2 style="margin-top:60px;">Записаться</h2>
-<input type="text" placeholder="Ваше имя">
-<input type="tel" placeholder="Телефон">
-<button class="btn">Отправить заявку</button>
+<section>
+<h2>Цены</h2>
+<div class="price">
+<p><strong>Абонемент (8 занятий):</strong> 500 000 сум</p>
+<p><strong>Пробное занятие:</strong> Бесплатно</p>
+</div>
+</section>
+
+<section>
+<h2>Отзывы родителей</h2>
+
+<div class="review">
+<p>"Мой сын начал интересоваться программированием благодаря RoboChess!"</p>
+<strong>— Шахноза</strong>
 </div>
 
+<div class="review">
+<p>"Отличные преподаватели и дисциплина."</p>
+<strong>— Бахром</strong>
 </div>
+
+</section>
+
+<section>
+<h2>Наши филиалы</h2>
+<p><strong>Филиал №1:</strong> Центральный район</p>
+<p><strong>Филиал №2:</strong> Восточный район</p>
+
+<iframe src="https://maps.google.com/maps?q=Urgench&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+<section id="contact">
+<h2>Записаться</h2>
+<p>Оставьте заявку и мы свяжемся с вами.</p>
+<input type="text" placeholder="Имя"><br>
+<input type="tel" placeholder="Телефон"><br>
+<button class="btn">Отправить</button>
+</section>
 
 <footer>
-© 2026 Elite Edu Center | Ташкент
+© 2026 RoboChess | Ургенч | 2 филиала
 </footer>
-
-<!-- MODAL -->
-<div id="modal">
-<div class="modal-content">
-<h2 id="modal-title"></h2>
-<p id="modal-text" style="margin-top:15px;"></p>
-<button class="btn close-btn" onclick="closeModal()">Закрыть</button>
-</div>
-</div>
-
-<script>
-function scrollToCourses(){
-document.getElementById("courses").scrollIntoView({behavior:"smooth"});
-}
-
-function openModal(course){
-let title="";
-let text="";
-
-if(course==="math"){
-title="Курс Математика";
-text="2 занятия в неделю. Развитие логики, подготовка к олимпиадам.";
-}
-
-if(course==="robot"){
-title="Курс Робототехника";
-text="Создание роботов, программирование, практические проекты.";
-}
-
-if(course==="english"){
-title="Курс Английский язык";
-text="Разговорная практика, грамматика, подготовка к экзаменам.";
-}
-
-document.getElementById("modal-title").innerText=title;
-document.getElementById("modal-text").innerText=text;
-document.getElementById("modal").style.display="flex";
-}
-
-function closeModal(){
-document.getElementById("modal").style.display="none";
-}
-</script>
 
 </body>
 </html>
