@@ -20,7 +20,7 @@ color:white;
 /* HERO */
 .hero{
 height:100vh;
-background:linear-gradient(rgba(15,23,42,0.8),rgba(15,23,42,0.8)),
+background:linear-gradient(rgba(15,23,42,0.85),rgba(15,23,42,0.85)),
 url('https://images.unsplash.com/photo-1509062522246-3755977927d7');
 background-size:cover;
 background-position:center;
@@ -33,14 +33,14 @@ padding:20px;
 }
 
 .hero h1{
-font-size:48px;
+font-size:46px;
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:20px;
-margin-bottom:30px;
 color:#cbd5e1;
+margin-bottom:30px;
 }
 
 .btn{
@@ -81,6 +81,7 @@ border-radius:20px;
 width:280px;
 transition:0.3s;
 border:1px solid #334155;
+cursor:pointer;
 }
 
 .card:hover{
@@ -110,11 +111,6 @@ background:#1e293b;
 color:white;
 }
 
-button{
-width:100%;
-margin-top:20px;
-}
-
 footer{
 text-align:center;
 padding:30px;
@@ -122,10 +118,35 @@ background:#020617;
 color:#94a3b8;
 }
 
+/* MODAL */
+#modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+max-width:400px;
+text-align:center;
+}
+
+.close-btn{
+margin-top:20px;
+}
+
 /* RESPONSIVE */
 @media(max-width:768px){
 .hero h1{
-font-size:32px;
+font-size:30px;
 }
 }
 </style>
@@ -134,29 +155,31 @@ font-size:32px;
 <body>
 
 <div class="hero">
-<h1>Образование нового уровня</h1>
-<p>Логика • IT • Робототехника • Английский</p>
-<button class="btn">Начать обучение</button>
+<h1>Elite Edu Center</h1>
+<p>Логика • Математика • Робототехника • Английский</p>
+<button class="btn" onclick="scrollToCourses()">Выбрать курс</button>
 </div>
 
-<div class="section">
-<h2>Популярные направления</h2>
+<div class="section" id="courses">
+<h2>Наши направления</h2>
 
 <div class="cards">
-<div class="card">
+
+<div class="card" onclick="openModal('math')">
 <h3>Математика</h3>
-<p>Глубокое понимание и логика.</p>
+<p>Развитие логического мышления.</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openModal('robot')">
 <h3>Робототехника</h3>
-<p>Инженерное мышление и практика.</p>
+<p>Инженерное обучение и практика.</p>
 </div>
 
-<div class="card">
-<h3>Английский</h3>
-<p>Разговорный и академический уровень.</p>
+<div class="card" onclick="openModal('english')">
+<h3>Английский язык</h3>
+<p>Современная разговорная методика.</p>
 </div>
+
 </div>
 
 <div class="form-box">
@@ -171,6 +194,49 @@ font-size:32px;
 <footer>
 © 2026 Elite Edu Center | Ташкент
 </footer>
+
+<!-- MODAL -->
+<div id="modal">
+<div class="modal-content">
+<h2 id="modal-title"></h2>
+<p id="modal-text" style="margin-top:15px;"></p>
+<button class="btn close-btn" onclick="closeModal()">Закрыть</button>
+</div>
+</div>
+
+<script>
+function scrollToCourses(){
+document.getElementById("courses").scrollIntoView({behavior:"smooth"});
+}
+
+function openModal(course){
+let title="";
+let text="";
+
+if(course==="math"){
+title="Курс Математика";
+text="2 занятия в неделю. Развитие логики, подготовка к олимпиадам.";
+}
+
+if(course==="robot"){
+title="Курс Робототехника";
+text="Создание роботов, программирование, практические проекты.";
+}
+
+if(course==="english"){
+title="Курс Английский язык";
+text="Разговорная практика, грамматика, подготовка к экзаменам.";
+}
+
+document.getElementById("modal-title").innerText=title;
+document.getElementById("modal-text").innerText=text;
+document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+</script>
 
 </body>
 </html>
